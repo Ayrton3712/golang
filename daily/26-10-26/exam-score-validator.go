@@ -8,13 +8,14 @@ import (
 func evaluateScore(score int) (string, error) {
 	if score < 0 || score > 100 {
 		return "", errors.New("invalid score")
-	} else if score >= 90 {
-		return "Excellent", nil
-	} else if score >= 60 {
-		return "Passed", nil
-	} else {
-		return "Failed", nil
 	}
+	if score >= 90 {
+		return "Excellent", nil
+	}
+	if score >= 60 {
+		return "Passed", nil
+	}
+	return "Failed", nil
 }
 
 func main() {
