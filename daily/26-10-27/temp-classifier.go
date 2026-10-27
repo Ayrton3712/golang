@@ -14,6 +14,17 @@ func main() {
 	case temperature >= 30:
 		fmt.Println("Hot")
 	}
+	// Less explicit, more concise alternative:
+	// switch temperature := 28; {
+	// case temperature < 10:
+	// 	fmt.Println("Cold")
+	// case temperature < 20:
+	// 	fmt.Println("Cool")
+	// case temperature < 30:
+	// 	fmt.Println("Warm")
+	// default:
+	// 	fmt.Println("Hot")
+	// }
 
 	// Part 2
 	switch category := 3; category {
