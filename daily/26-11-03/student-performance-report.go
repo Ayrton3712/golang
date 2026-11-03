@@ -16,7 +16,7 @@ func main() {
 	}
 
 	// Declare counts, highestScore (index of highest-scoring student) and sum
-	var passingCount, highestScore, sum int
+	var passingCount, topIndex, sum int
 	for i, student := range students {
 		// Print every student's name and score
 		fmt.Printf("%s: %d\n", student.Name, student.Score)
@@ -27,8 +27,8 @@ func main() {
 		}
 
 		// Find student with highest score
-		if students[highestScore].Score < student.Score {
-			highestScore = i
+		if students[topIndex].Score < student.Score {
+			topIndex = i
 		}
 
 		// Add scores
@@ -40,6 +40,6 @@ func main() {
 
 	// Print
 	fmt.Printf("Passing students: %d\n", passingCount)
-	fmt.Printf("Top student: %s (%d)\n", students[highestScore].Name, students[highestScore].Score)
+	fmt.Printf("Top student: %s (%d)\n", students[topIndex].Name, students[topIndex].Score)
 	fmt.Printf("Average: %.2f\n", averageScore)
 }
